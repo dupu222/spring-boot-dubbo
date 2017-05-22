@@ -5,7 +5,7 @@
 <generatorConfiguration>
 
   <!-- !!!! Driver Class Path !!!! -->
-  <classPathEntry location=""/>
+  <classPathEntry location="D:\repository\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar"/>
 
   <context id="context" targetRuntime="MyBatis3">
     <commentGenerator>
@@ -15,7 +15,7 @@
 
     <!-- !!!! Database Configurations !!!! -->
     <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                    connectionURL="jdbc:mysql://192.168.1.145:3308/basehouse"
+                    connectionURL="jdbc:mysql://192.168.1.145:3308/test_database"
                     userId="root"
                     password="123456"/>
 
@@ -24,7 +24,7 @@
     </javaTypeResolver>
 
     <!-- !!!! Model Configurations !!!! -->
-    <javaModelGenerator targetPackage="" targetProject="">
+    <javaModelGenerator targetPackage="com.dp.test.domain" targetProject="../../domain/src/main/java">
       <property name="enableSubPackages" value="false"/>
       <property name="trimStrings" value="true"/>
     </javaModelGenerator>
@@ -35,12 +35,14 @@
     </sqlMapGenerator>
 
     <!-- !!!! Mapper Interface Configurations !!!! -->
-    <javaClientGenerator targetPackage="" targetProject="THIS_CONFIGURATION_IS_NOT_REQUIRED" type="XMLMAPPER">
+    <javaClientGenerator targetPackage="com.dp.test.dao.intr" targetProject="../../dao/dao-intr/src/main/java" type="XMLMAPPER">
       <property name="enableSubPackages" value="false"/>
     </javaClientGenerator>
 
     <!-- !!!! Table Configurations !!!! -->
-    <table tableName="" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+      <table tableName="hotel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+             enableUpdateByExample="false"/>
+    <table tableName="city" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
            enableUpdateByExample="false"/>
   </context>
 </generatorConfiguration>
